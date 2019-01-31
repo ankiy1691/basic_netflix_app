@@ -1,12 +1,47 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-const Landing = () => (
-  <div className="landing">
-    <h1>svideo</h1>
-    <input type="text" placeholder="Search" />
-    <Link to="/search">or Browse All</Link>
-  </div>
-);
+import { setSearchTerm } from "./actionCreators";
 
-export default Landing;
+class Landing extends React.Component {
+  goToSearch = event => {
+    event.preventDefault();
+    this.props.history.push("/search");
+  };
+  render() {
+    return (
+      <div className="landing">
+        <h1>svideo</h1>
+        <form onSubmit={this.goToSearch}>
+          <input
+            onChange={this.props.handleSearchTermChange}
+            value={this.props.searchTerm}
+            type="text"
+            placeholder="Search"
+          />
+        </form>
+        <Link to="/search">or Browse All</Link>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  searchTerm: state.searchTerm
+});
+
+const mapDispatchToProps = dispatch => ({
+  handleSearchTermChange(event) {
+    dispatch(setSearchTerm(event.target.value));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Landing);
+/* function mapDispatchToProps(dispatch) {
+  return {
+    addUser: user => {
+      dispatch(userActions.addUser(user));
+    }
+  };
+} */
