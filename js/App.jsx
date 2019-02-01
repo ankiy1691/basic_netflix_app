@@ -12,7 +12,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route
-          path="/search"
+          path="/search/:searchValue"
           component={props => {
             return <Search shows={preload.shows} {...props} />;
           }}

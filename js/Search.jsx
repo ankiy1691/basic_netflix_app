@@ -6,7 +6,10 @@ class Search extends Component {
   state = {
     searchTerm: ""
   };
-
+  componentWillMount(){
+    const movie = this.props.match.params.searchValue;
+    this.setState({searchTerm:movie})
+  }
   handleSearchTermChange = event => {
     this.setState({ searchTerm: event.target.value });
   };
