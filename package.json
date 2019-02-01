@@ -1,9 +1,10 @@
 {
   "scripts": {
     "api": "node ratingsAPI.js",
-    "build": "webpack --watch",
+    "watch": "webpack --watch",
     "dev": "webpack-dev-server",
     "lint": "eslint **/*.{js,jsx} --quiet",
+    "start":"NODE_ENV=server node server.js",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:update": "jest -u"

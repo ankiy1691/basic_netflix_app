@@ -13,6 +13,7 @@ test("Search renders correctly", () => {
     <UnwrappedSearch shows={preload.shows} searchTerm="" />
   );
   expect(component).toMatchSnapshot();
+  console.log(process.env.NODE_ENV);
 });
 
 test("Search should render correct amount of shows", () => {
