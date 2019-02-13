@@ -18,7 +18,7 @@ const Header = props => {
     utilSpace = (
       <h2 className="header-back">
         <Link to="/search">
-          Back1
+          Back
         </Link>
       </h2>
     );

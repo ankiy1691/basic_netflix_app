@@ -15,7 +15,7 @@ class Landing extends React.Component {
         <h1>svideo</h1>
         <form onSubmit={this.goToSearch}>
           <input
-            onChange={this.props.handleSearchTermChange}
+              onChange={this.props.handleSearchTermChange}
             value={this.props.searchTerm}
             type="text"
             placeholder="Search"

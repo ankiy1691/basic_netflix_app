@@ -6,11 +6,13 @@ import Header from "./Header";
 const Search = props => (
   <div className="search">
     <Header showSearch />
-    <div>
+    {/* <pre><code>{JSON.stringify(preload,nul,4)}</code></pre> */}
+      <div>
       {props.shows
         .filter(
           show =>
-            `${show.title} ${show.description}`
+            `${show.title} 
+            ${show.description}`
               .toUpperCase()
               .indexOf(props.searchTerm.toUpperCase()) >= 0
         )
