@@ -1,4 +1,5 @@
-import { setSearchTerm, addAPIData, getAPIDetails } from "../actionCreators";
+import { setSearchTerm, addAPIData } from "../actionCreators";
+import getAPIDetails from "../asynActions";
 import moxios from "moxios";
 
 test("setSearchTerm", () => {

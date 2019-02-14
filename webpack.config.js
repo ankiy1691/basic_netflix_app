@@ -1,11 +1,10 @@
 const path = require("path");
 const webpack = require("webpack");
 
-module.exports = {
+const config = {
   context: __dirname,
   entry: [
-    "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000",
-    "./js/ClientApp.jsx"
+   "webpack-hot-middleware/client?path=__webpack_hmr&timeout=2000", "./js/ClientApp.jsx"
   ],
   devtool: "cheap-eval-source-map",
   output: {
@@ -45,3 +44,10 @@ module.exports = {
     ]
   }
 };
+if (process.env.NODE_ENV === 'production') {
+  config.entry="./js/ClientApp.jsx";
+  config.devtool=false;
+  config.plugins=[];
+}
+
+module.exports = config;

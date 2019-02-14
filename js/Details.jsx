@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 import { connect } from "react-redux";
 import Spinner from "./Spinner";
-import { getAPIDetails } from "./actionCreators";
+import  getAPIDetails  from "./asynActions";
 
 class Details extends Component {
   componentDidMount() {
